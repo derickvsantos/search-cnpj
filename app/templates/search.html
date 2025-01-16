@@ -1,0 +1,35 @@
+{% extends 'global/base.html' %}
+{% block title %}Resultado{% endblock title %}
+{% block content %}
+<div class="main-content container">
+    {% include "global/partials/search.html" %}
+    <div class="cnpj-results">
+        <h2>Dados Cadastrais:</h2>
+        <p><strong>CNPJ:</strong> {{data.cnpj}}</p>
+        <p><strong>Razão Social:</strong> {{data.razao_social}}</p>
+        <p><strong>Natureza Juridica:</strong> {{data.natureza_juridica}}</p>
+        <p><strong>Situação Cadastral:</strong> {{data.descricao_situacao_cadastral}}</p>
+        <p><strong>Data de inscrição:</strong> {{data.data_inicio_atividade}}
+        <p><strong>Telefone:</strong> {{data.ddd_telefone_1}}</p>
+        <p><strong>Endereço:</strong> {{data.descricao_tipo_de_logradouro}} {{data.logradouro}}, {{data.numero}}</p>
+        <p><strong>Bairro:</strong> {{data.bairro}}</p>
+        <p><strong>Cidade:</strong> {{data.municipio}}</p>
+        <p><strong>UF:</strong> {{data.uf}}</p>
+        <p><strong>CEP:</strong> {{data.cep}}</p>
+        <p><strong>CNAE Fiscal:</strong> {{data.cnae_fiscal}}</p>
+        <p><strong>CNAE Descrição:</strong> {{data.cnae_fiscal_descricao}}</p>
+        <p><strong>Capital Social:</strong> {{data.capital_social}}</p>
+        <h3>CNAEs Secundários:</h3>
+        {% for cnae in data.cnaes_secundarios %}
+            <p><strong>Código:</strong> {{cnae.codigo}}</p>
+            <p class="final-item"><strong>Descrição:</strong> {{cnae.descricao}}</p>
+        {% endfor %}
+        <h3>Sócios:</h3>
+        {% for socio in data.qsa %}
+            <p><strong>Nome:</strong> {{socio.nome_socio}}</p>
+            <p><strong>Qualificação:</strong> {{socio.qualificacao_socio}}</p>
+            <p class="final-item"><strong>Data de entrada:</strong> {{socio.data_entrada_sociedade}}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
