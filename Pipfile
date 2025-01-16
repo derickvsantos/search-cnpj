@@ -6,8 +6,6 @@ name = "pypi"
 [packages]
 django = "*"
 requests = "*"
-exchangelib = "*"
-pypdf2 = "*"
 
 [dev-packages]
 
