@@ -13,10 +13,10 @@ class BuscaInformacoesCNPJ:
         url = self.url + self.cnpj
         response = requests.get(url)
         self.raw_data = response.json()
-        self.order_data()
+        self._order_data()
         return self.raw_data
     
-    def order_data(self):
+    def _order_data(self):
         self._format_contact_number()
         self._format_postal_code()
         self._format_date()

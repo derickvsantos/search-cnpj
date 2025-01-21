@@ -43,6 +43,7 @@
 
     --spacing-gutter-medium: 3rem;
     --spacing-gutter-large: 4rem;
+    --spacing-gutter-gg: 6rem;
 
     --color-header-new: #000000;
 }
@@ -91,6 +92,10 @@ h6 {
     max-width: 144rem;
     margin: 0 auto;
     padding: var(--spacing-gutter-medium);
+}
+
+.main-content {
+    padding-top: 0;
 }
 
 .main-logo {
@@ -167,4 +172,24 @@ h6 {
 
 .search-form:focus-within .search-button {
     color: var(--color-primary);
+}
+
+.cnpj-results {
+    padding: var(--spacing-gutter-large);
+}
+
+.cnpj-results h3 {
+    padding-top: 2rem;
+}
+
+.cnpj-results p {
+    padding-top: 0.5rem;
+}
+
+.cnpj-results h2 {
+    padding-bottom: 2rem;
+}
+
+.final-item {
+    padding-bottom: 1rem;
 }
