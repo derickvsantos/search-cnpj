@@ -8,12 +8,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Adiciona ferramentas de localidade no sistema
 RUN apt-get update && apt-get install -y locales && \
     sed -i '/pt_BR.UTF-8/s/^# //' /etc/locale.gen && \
     locale-gen
-
-# Configura a localidade padrão para pt_BR.UTF-8
+    
 ENV LANG=pt_BR.UTF-8 \
     LANGUAGE=pt_BR:pt:en \
     LC_ALL=pt_BR.UTF-8
